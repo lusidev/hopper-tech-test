@@ -19,9 +19,19 @@
   "type": "commonjs",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "find src/server -name '*.test.ts' -print0 | xargs -0 node --import tsx --test",
+    "test:watch": "node --import tsx --test --watch src/server/mocks/*.test.ts src/server/processing/calls/*.test.ts src/server/processing/operator-lookup/*.test.ts"
   },
   "devDependencies": {
-    "@tsconfig/recommended": "^1.0.13"
+    "@eslint/js": "^9.23.0",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "@tsconfig/recommended": "^1.0.13",
+    "@types/node": "^25.5.0",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2",
+    "tsx": "^4.21.0"
   }
 }

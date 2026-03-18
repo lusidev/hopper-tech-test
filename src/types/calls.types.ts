@@ -1,7 +1,7 @@
 export interface CallRecord {
   id: string;
-  callStartTime: string; // ISO 8601 format
-  callEndTime: string;   // ISO 8601 format
+  callStartTime: string; // ISO 8601 formatted timestamp
+  callEndTime: string; // ISO 8601 formatted timestamp
   fromNumber: string;
   toNumber: string;
   callType: 'voice' | 'video';
@@ -9,7 +9,7 @@ export interface CallRecord {
 }
 
 export interface EnrichedCallRecord extends CallRecord {
-  duration: number; // calculated in seconds
+  duration: number;
   fromOperator?: string;
   toOperator?: string;
   fromCountry?: string;
